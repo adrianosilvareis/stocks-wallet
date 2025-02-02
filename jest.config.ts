@@ -1,15 +1,15 @@
 import type { Config } from "jest";
 
 const config: Config = {
+  preset: "ts-jest",
   clearMocks: true,
-  coverageDirectory: "coverage",
-  coverageProvider: "v8",
+  testEnvironment: "node",
+  moduleFileExtensions: ["ts", "js"],
   transform: {
-    "^.+\\.tsx?$": "ts-jest"
+    "^.+\\.ts$": "ts-jest"
   },
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
-  testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[tj]s?(x)"],
-  testEnvironment: "node"
+  testMatch: ["**/__tests__/**/*.test.ts"],
+  setupFiles: ["./__tests__/setup.ts"]
 };
 
 export default config;
