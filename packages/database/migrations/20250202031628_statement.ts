@@ -1,16 +1,14 @@
 import type { Knex } from "knex";
 
 export async function up(knex: Knex): Promise<void> {
-  return knex.schema.createTable("orders", (table) => {
+  return knex.schema.createTable("statement", (table) => {
     table.uuid("id").defaultTo(knex.fn.uuid()).primary();
-    table.string("code").notNullable().references("code").inTable("assets");
     table.uuid("wallet_id").notNullable().references("id").inTable("wallet");
-    table.integer("quantity").notNullable();
-    table.decimal("price").notNullable();
+    table.decimal("amount").notNullable();
     table
-      .enum("type", ["buy", "sell"], {
+      .enu("type", ["deposit", "withdraw", "yield"], {
         useNative: true,
-        enumName: "order_type"
+        enumName: "statement_type"
       })
       .notNullable();
     table.timestamp("created_at", { precision: 6 }).defaultTo(knex.fn.now());
@@ -18,5 +16,5 @@ export async function up(knex: Knex): Promise<void> {
 }
 
 export async function down(knex: Knex): Promise<void> {
-  return knex.schema.dropTable("orders");
+  return knex.schema.dropTable("statement");
 }

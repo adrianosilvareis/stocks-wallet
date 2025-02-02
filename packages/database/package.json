@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "migrate": "knex migrate:latest --env staging",
-    "seed": "knex seed:run --env staging"
+    "seed": "knex seed:run --env staging",
+    "makeMigration": "knex migrate:make $1"
   },
   "keywords": [],
   "author": "",

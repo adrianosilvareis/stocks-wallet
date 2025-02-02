@@ -3,6 +3,7 @@ import { z } from "zod";
 export const ordersScheme = z.object({
   id: z.string().uuid(),
   code: z.string(),
+  wallet_id: z.string().uuid(),
   quantity: z.number(),
   price: z.number(),
   type: z.enum(["buy", "sell"]),

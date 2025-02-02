@@ -8,7 +8,8 @@ export const orderssMock: Orders[] = [
     quantity: 100,
     price: 1.5,
     created_at: "2022-02-01T02:22:52.000Z",
-    type: "buy"
+    type: "buy",
+    wallet_id: "f6a5b56d-ba41-4ebf-9727-46345694287d"
   },
   {
     id: uuidv4(),
@@ -16,7 +17,8 @@ export const orderssMock: Orders[] = [
     quantity: 200,
     price: 1.0,
     created_at: "2022-02-01T02:22:52.000Z",
-    type: "buy"
+    type: "buy",
+    wallet_id: "f6a5b56d-ba41-4ebf-9727-46345694287d"
   },
   {
     id: uuidv4(),
@@ -24,7 +26,8 @@ export const orderssMock: Orders[] = [
     quantity: 300,
     price: 2.0,
     created_at: "2022-02-01T02:22:52.000Z",
-    type: "buy"
+    type: "buy",
+    wallet_id: "f6a5b56d-ba41-4ebf-9727-46345694287d"
   },
   {
     id: uuidv4(),
@@ -32,7 +35,8 @@ export const orderssMock: Orders[] = [
     quantity: 400,
     price: 3.0,
     created_at: "2022-02-01T02:22:52.000Z",
-    type: "buy"
+    type: "buy",
+    wallet_id: "f6a5b56d-ba41-4ebf-9727-46345694287d"
   },
   {
     id: uuidv4(),
@@ -40,7 +44,8 @@ export const orderssMock: Orders[] = [
     quantity: 500,
     price: 4.0,
     created_at: "2022-02-01T02:22:52.000Z",
-    type: "buy"
+    type: "buy",
+    wallet_id: "f6a5b56d-ba41-4ebf-9727-46345694287d"
   },
   {
     id: uuidv4(),
@@ -48,7 +53,8 @@ export const orderssMock: Orders[] = [
     quantity: 600,
     price: 5.0,
     created_at: "2022-02-01T02:22:52.000Z",
-    type: "buy"
+    type: "buy",
+    wallet_id: "f6a5b56d-ba41-4ebf-9727-46345694287d"
   },
   {
     id: uuidv4(),
@@ -56,7 +62,8 @@ export const orderssMock: Orders[] = [
     quantity: 700,
     price: 6.0,
     created_at: "2022-02-01T02:22:52.000Z",
-    type: "buy"
+    type: "buy",
+    wallet_id: "f6a5b56d-ba41-4ebf-9727-46345694287d"
   },
   {
     id: uuidv4(),
@@ -64,7 +71,8 @@ export const orderssMock: Orders[] = [
     quantity: 100,
     price: 2.5,
     created_at: "2022-02-02T02:22:52.000Z",
-    type: "sell"
+    type: "sell",
+    wallet_id: "f6a5b56d-ba41-4ebf-9727-46345694287d"
   },
   {
     id: uuidv4(),
@@ -72,7 +80,8 @@ export const orderssMock: Orders[] = [
     quantity: 300,
     price: 6.0,
     created_at: "2022-02-02T02:22:52.000Z",
-    type: "sell"
+    type: "sell",
+    wallet_id: "f6a5b56d-ba41-4ebf-9727-46345694287d"
   },
   {
     id: uuidv4(),
@@ -80,6 +89,7 @@ export const orderssMock: Orders[] = [
     quantity: 200,
     price: 4.0,
     created_at: "2022-02-02T02:22:52.000Z",
-    type: "sell"
+    type: "sell",
+    wallet_id: "f6a5b56d-ba41-4ebf-9727-46345694287d"
   }
 ];

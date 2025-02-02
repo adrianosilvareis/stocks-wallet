@@ -5,7 +5,10 @@
   "description": "Stocks management monorepo",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "pnpm -r build"
+    "build": "pnpm -r build",
+    "makeMigration": "pnpm --filter @stocks/database makeMigration",
+    "migrate": "pnpm --filter @stocks/database migrate",
+    "seed": "pnpm --filter @stocks/database seed"
   },
   "keywords": [],
   "author": "",
