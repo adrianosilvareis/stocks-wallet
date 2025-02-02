@@ -1,6 +1,5 @@
+import { Orders, orderssMock } from "@stocks/models";
 import { Knex } from "knex";
-import { orderssMock } from "../mocks/orders.mock";
-import { Orders } from "../src/models/orders.scheme";
 
 export async function seed(knex: Knex): Promise<void> {
   // Deletes ALL existing entries

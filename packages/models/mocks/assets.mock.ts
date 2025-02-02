@@ -1,4 +1,4 @@
-import { Assets } from "src/models/assets.scheme";
+import { Assets } from "../scheme/assets.scheme";
 
 export const assetsMock: Assets[] = [
   {

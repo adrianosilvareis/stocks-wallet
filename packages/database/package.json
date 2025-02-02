@@ -1,0 +1,28 @@
+{
+  "name": "@stocks/database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "migrate": "knex migrate:latest --env staging",
+    "seed": "knex seed:run --env staging"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/faker": "^6.6.11",
+    "@types/knex": "^0.16.1",
+    "@types/uuid": "^10.0.0",
+    "faker": "^6.6.6",
+    "knex": "^3.1.0",
+    "pg": "^8.13.1",
+    "sqlite3": "^5.1.7",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "uuid": "^11.0.5",
+    "@stocks/models": "workspace:*"
+  }
+}

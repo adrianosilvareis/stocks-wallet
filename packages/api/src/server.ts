@@ -1,7 +1,7 @@
+import { Orders } from "@stocks/models";
 import { Repository } from "./config/database.config";
 import { app } from "./config/express.config";
 import { SERVER_PORT } from "./config/settings";
-import { Orders } from "./models/orders.scheme";
 
 app.get("/", async (req, res) => {
   const repository = new Repository<Orders>("orders");

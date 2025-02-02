@@ -12,9 +12,9 @@ export const config: { [key: string]: Knex.Config } = {
   staging: {
     client: "postgresql",
     connection: {
-      database: "my_db",
-      user: "username",
-      password: "password"
+      database: "stocks_db",
+      user: "postgres",
+      password: "postgres"
     },
     pool: {
       min: 2,

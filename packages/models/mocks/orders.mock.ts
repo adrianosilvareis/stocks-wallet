@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { Orders } from "../src/models/orders.scheme";
+import { Orders } from "../scheme/orders.scheme";
 
 export const orderssMock: Orders[] = [
   {
