@@ -1,4 +1,4 @@
-import { IHttpResponse } from "../http-response/interfaces/IHttpResponse";
+import { IHttpResponse } from "../http-response/IHttpResponse";
 import { Either } from "../tools/either";
 
 export interface RequestContext<T = any> {

@@ -1,5 +1,5 @@
-import { Either, left, right } from "../../tools/either";
-import { IHttpResponse } from "../interfaces/IHttpResponse";
+import { Either, left, right } from "../tools/either";
+import { IHttpResponse } from "./IHttpResponse";
 
 export class HttpResponse {
   static ok<T>(

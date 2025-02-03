@@ -1,8 +1,8 @@
 import express, { Router } from "express";
 import request from "supertest";
-import { HttpResponse } from "../../http-response/utils/HttpResponse";
-import { HttpMethod } from "../HttpMethod";
-import { SurfaceBuilder } from "../SurfaceBuilder";
+import { HttpResponse } from "../http-response/HttpResponse";
+import { HttpMethod } from "../http/HttpMethod";
+import { SurfaceBuilder } from "../http/SurfaceBuilder";
 
 describe("SurfaceBuilder", () => {
   let builder: SurfaceBuilder;

@@ -1,45 +1,49 @@
-import type { Knex } from "knex";
+import { getEnvOrDefault } from "@stocks/core";
+import { config } from "dotenv";
+import { Knex } from "knex";
 
-export const config: { [key: string]: Knex.Config } = {
+config();
+
+const defaultConfig: Knex.Config = {
+  client: "pg",
+  connection: {
+    host: getEnvOrDefault("DB_HOST", "localhost"),
+    port: Number(getEnvOrDefault("DB_PORT", "5432")),
+    user: getEnvOrDefault("DB_USER", "postgres"),
+    password: getEnvOrDefault("DB_PASSWORD", "password"),
+    database: getEnvOrDefault("DB_NAME", "stocks")
+  },
+  pool: {
+    min: 2,
+    max: 10
+  },
+  migrations: {
+    tableName: "knex_migrations",
+    directory: "./migrations"
+  }
+};
+
+export const configs: Record<string, Knex.Config> = {
   development: {
-    client: "sqlite3",
-    connection: {
-      filename: "./dev.sqlite3"
-    },
-    useNullAsDefault: true
+    ...defaultConfig,
+    debug: true
   },
 
-  staging: {
-    client: "postgresql",
+  test: {
+    ...defaultConfig,
     connection: {
-      database: "stocks_db",
-      user: "postgres",
-      password: "postgres"
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: "knex_migrations"
+      ...(defaultConfig.connection as object),
+      database: `${process.env.DB_NAME}_test`
     }
   },
 
   production: {
-    client: "postgresql",
-    connection: {
-      database: "my_db",
-      user: "username",
-      password: "password"
-    },
+    ...defaultConfig,
     pool: {
       min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: "knex_migrations"
+      max: 20
     }
   }
 };
 
-module.exports = config;
+export default configs;

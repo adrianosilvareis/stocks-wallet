@@ -17,6 +17,7 @@
     "@types/faker": "^6.6.11",
     "@types/knex": "^0.16.1",
     "@types/uuid": "^10.0.0",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "faker": "^6.6.6",
     "knex": "^3.1.0",
@@ -27,7 +28,9 @@
     "typescript": "^5.7.3",
     "uuid": "^11.0.5",
     "zod": "^3.24.1",
-    "@stocks/models": "workspace:*"
+    "@stocks/models": "workspace:*",
+    "@stocks/core": "workspace:*",
+    "@stocks/database": "workspace:*"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",

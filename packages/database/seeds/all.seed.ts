@@ -13,8 +13,8 @@ import { Knex } from "knex";
 export async function seed(knex: Knex): Promise<void> {
   // Deletes ALL existing entries
   await knex("statement").del();
-  await knex("wallet").del();
   await knex("orders").del();
+  await knex("wallet").del();
   await knex("assets").del();
 
   // Inserts seed entries

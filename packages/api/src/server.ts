@@ -1,25 +1,15 @@
-import { Orders } from "@stocks/models";
-import { Repository } from "./config/database.config";
+import { Router } from "express";
+import { getEnvOrDefault } from "packages/core";
 import { app } from "./config/express.config";
-import { SERVER_PORT } from "./config/settings";
+import { setup } from "./wallet/setupWallet";
 
-app.get("/", async (req, res) => {
-  const repository = new Repository<Orders>("orders");
+const router = Router();
 
-  const { query, knex } = await repository.getQueryBuilder();
+setup(router);
 
-  const result = await query.select(
-    knex.raw(`
-        SUM(CASE 
-          WHEN type = 'buy' THEN quantity 
-          WHEN type = 'sell' THEN -quantity 
-          ELSE 0 
-        END) as total_quantity
-      `)
-  );
+app.use(router);
 
-  res.send(result);
-});
+const SERVER_PORT = Number(getEnvOrDefault("SERVER_PORT", "3000"));
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server is running on port ${SERVER_PORT}`);

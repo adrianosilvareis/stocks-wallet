@@ -110,7 +110,10 @@ export class SurfaceBuilder<T = any> {
       body: req.body,
       params: req.params,
       query: req.query as Record<string, string>,
-      headers: req.headers as Record<string, string>
+      headers: { ...req.headers, ...this.request.headers } as Record<
+        string,
+        string
+      >
     };
   }
 }

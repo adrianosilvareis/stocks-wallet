@@ -9,6 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "main": "index.ts",
   "dependencies": {
     "@stocks/models": "workspace:*",
     "@types/express": "^5.0.0",
