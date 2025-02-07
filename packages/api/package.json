@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:ci": "jest --coverage --silent",
-    "start": "tsx ./src/server.ts",
+    "start": "tsx ./src/server.ts --watch",
     "build": "tsc"
   },
   "keywords": [],

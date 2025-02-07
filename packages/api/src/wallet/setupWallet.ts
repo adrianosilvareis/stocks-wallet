@@ -1,25 +1,17 @@
-import { HttpResponse } from "@stocks/core";
-import { Repository, connection } from "@stocks/database";
-import { Wallet } from "@stocks/models";
+import { Repository } from "@stocks/database";
+import { wallet, Wallet } from "@stocks/models";
 import { Router } from "express";
 import { Surface } from "./Surface";
+import { walletImpl } from "./controller/wallet.controller";
 
-class WalletRepository extends Repository<Wallet> {
-  constructor() {
-    super(connection, "wallet");
-  }
-}
-
-const walletImpl = async (_context: unknown, _deps: unknown) => {
-  return HttpResponse.ok({ success: true });
+const deps = {
+  repository: new Repository<Wallet>(wallet.tableName)
 };
 
 export function setup(router: Router) {
-  Surface.test.registerExpressHandler<unknown, unknown, unknown>(
-    router,
-    walletImpl,
-    {
-      repository: new WalletRepository()
-    }
-  );
+  Surface.test.registerExpressHandler<
+    unknown,
+    { success: boolean },
+    { repository: Repository<Wallet> }
+  >(router, walletImpl, deps);
 }

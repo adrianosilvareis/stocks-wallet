@@ -1,13 +1,14 @@
 import { Knex } from "knex";
 import { QueryBuilder } from "./QueryBuilder";
+import { connection } from "./connection";
 
-export abstract class Repository<T> {
+export class Repository<T> {
   protected tableName: string;
   protected queryBuilder: QueryBuilder;
 
-  constructor(protected readonly knex: Knex, tableName: string) {
-    this.tableName = tableName;
-    this.queryBuilder = new QueryBuilder(knex, tableName);
+  constructor(tableName: Symbol, protected readonly knex: Knex = connection) {
+    this.tableName = tableName.description || tableName.toString();
+    this.queryBuilder = new QueryBuilder(knex, this.tableName);
   }
 
   query(): QueryBuilder {

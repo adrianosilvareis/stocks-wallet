@@ -2,7 +2,7 @@ import { getEnvOrDefault } from "@stocks/core";
 import { config } from "dotenv";
 import { Knex } from "knex";
 
-config();
+config({ path: "../../.env" });
 
 const defaultConfig: Knex.Config = {
   client: "pg",
@@ -10,7 +10,7 @@ const defaultConfig: Knex.Config = {
     host: getEnvOrDefault("DB_HOST", "localhost"),
     port: Number(getEnvOrDefault("DB_PORT", "5432")),
     user: getEnvOrDefault("DB_USER", "postgres"),
-    password: getEnvOrDefault("DB_PASSWORD", "password"),
+    password: getEnvOrDefault("DB_PASSWORD", "postgres"),
     database: getEnvOrDefault("DB_NAME", "stocks")
   },
   pool: {
