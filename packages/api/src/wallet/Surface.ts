@@ -1,7 +1,7 @@
 import { createRequest, HttpMethod } from "@stocks/core";
 
 export const Surface = {
-  test: createRequest("/api/test", HttpMethod.GET).withBody({ name: "Test" })
+  wallets: createRequest("/api/wallets", HttpMethod.GET)
 };
 
-export const getProxy = Surface.test.execute;
+export const getProxy = Surface.wallets.execute;

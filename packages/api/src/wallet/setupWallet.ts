@@ -9,9 +9,9 @@ const deps = {
 };
 
 export function setup(router: Router) {
-  Surface.test.registerExpressHandler<
+  Surface.wallets.registerExpressHandler<
     unknown,
-    { success: boolean },
+    Wallet[],
     { repository: Repository<Wallet> }
   >(router, walletImpl, deps);
 }

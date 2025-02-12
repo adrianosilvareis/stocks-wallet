@@ -5,6 +5,8 @@ import { Wallet } from "@stocks/models";
 export const walletImpl = async (_context: unknown, deps: { repository: Repository<Wallet> }) => {
   const { repository }= deps
   const result = await repository.findAll();
-  console.log(result)
-  return HttpResponse.ok({ success: true });
+  if (result.isLeft()) {
+    return HttpResponse.internalServerError(result.value.message);
+  }
+  return HttpResponse.ok(result.value);
 };
